@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файлов - Файловое хранилище</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📁 Файловое хранилище</div>
+            <nav class="nav">
+                <a href="my-files.html" class="nav-link">Мои файлы</a>
+                <a href="shared-files.html" class="nav-link">Доступные файлы</a>
+                <a href="upload-files.html" class="nav-link active">Загрузить</a>
+            </nav>
+            <button class="btn-logout" id="logoutBtn">Выход</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card card-wide">
+            <h1 class="card-title">Загрузка файлов</h1>
+            
+            <!-- Сообщения -->
+            <div id="message" class="message"></div>
+
+            <!-- Drag and Drop область -->
+            <div class="upload-area" id="dropArea">
+                <div class="upload-icon">📤</div>
+                <div class="upload-text">Перетащите файлы сюда</div>
+                <div class="upload-hint">или</div>
+                <label for="fileInput" class="btn btn-primary" style="margin-top: 10px; cursor: pointer;">
+                    📁 Выбрать файлы
+                </label>
+                <input 
+                    type="file" 
+                    id="fileInput" 
+                    class="file-input" 
+                    multiple
+                    accept="*/*"
+                >
+            </div>
+
+            <!-- Загрузчик -->
+            <div class="loader" id="loader"></div>
+
+            <!-- Результаты загрузки -->
+            <div class="upload-results" id="uploadResults" style="display: none;">
+                <h3 class="mb-10">Результаты загрузки</h3>
+                
+                <div id="resultList">
+                    <!-- Пример успешной загрузки -->
+                    <div class="upload-item">
+                        <div class="upload-status">
+                            <span class="status-icon success">✅</span>
+                            <div>
+                                <div class="file-name">document.pdf</div>
+                                <div class="file-meta">Размер: 2 МБ • Загружен успешно</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success btn-small">
+                            ⬇️ Скачать
+                        </button>
+                    </div>
+
+                    <!-- Пример ошибки загрузки -->
+                    <div class="upload-item">
+                        <div class="upload-status">
+                            <span class="status-icon error">❌</span>
+                            <div>
+                                <div class="file-name">large_file.zip</div>
+                                <div class="file-meta" style="color: #e74c3c;">Ошибка: файл слишком большой</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка назад -->
+            <div class="mt-20">
+                <button class="btn btn-secondary" id="backBtn">
+                    ← Назад к моим файлам
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS для SPA-логики (участник должен реализовать) -->
+    <script>
+        // TODO: Реализовать drag-and-drop функциональность
+        // TODO: Обработать выбор файлов через input
+        // TODO: Отправить файлы на API (multipart/form-data)
+        // TODO: Отобразить результаты загрузки
+        // TODO: Обработать кнопку скачивания для загруженных файлов
+        // TODO: Обработать кнопку "Назад"
+        
+        // Подсказка для drag-and-drop:
+        // - dragenter, dragover - добавить класс drag-over
+        // - dragleave, drop - убрать класс drag-over
+        // - drop - получить файлы из event.dataTransfer.files
+    </script>
+</body>
+</html>

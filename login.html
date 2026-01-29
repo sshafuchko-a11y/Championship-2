@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Файловое хранилище</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Форма входа -->
+        <div class="card">
+            <h1 class="card-title">Вход в систему</h1>
+            
+            <!-- Сообщения об ошибках -->
+            <div id="message" class="message"></div>
+            
+            <form id="loginForm">
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="user@example.com"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Пароль -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Пароль</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Введите пароль"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Кнопка входа -->
+                <button type="submit" class="btn btn-primary btn-full">
+                    Войти
+                </button>
+            </form>
+
+            <!-- Ссылка на регистрацию -->
+            <div class="text-center mt-20">
+                <span>Нет аккаунта? </span>
+                <a href="registration.html" class="link">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS для SPA-логики (участник должен реализовать) -->
+    <script>
+        // TODO: Реализовать отправку данных на API
+        // TODO: Сохранить токен при успешной авторизации
+        // TODO: Перенаправить на my-files.html
+    </script>
+</body>
+</html>

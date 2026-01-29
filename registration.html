@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Файловое хранилище</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Форма регистрации -->
+        <div class="card">
+            <h1 class="card-title">Регистрация</h1>
+            
+            <!-- Сообщения об ошибках/успехе -->
+            <div id="message" class="message"></div>
+            
+            <form id="registrationForm">
+                <!-- Фамилия -->
+                <div class="form-group">
+                    <label class="form-label" for="lastName">Фамилия</label>
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="last_name" 
+                        class="form-input" 
+                        placeholder="Иванов"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Имя -->
+                <div class="form-group">
+                    <label class="form-label" for="firstName">Имя</label>
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="first_name" 
+                        class="form-input" 
+                        placeholder="Иван"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Отчество -->
+                <div class="form-group">
+                    <label class="form-label" for="patronymic">Отчество</label>
+                    <input 
+                        type="text" 
+                        id="patronymic" 
+                        name="patronymic" 
+                        class="form-input" 
+                        placeholder="Иванович"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="user@example.com"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Дата рождения -->
+                <div class="form-group">
+                    <label class="form-label" for="birthDate">Дата рождения</label>
+                    <input 
+                        type="date" 
+                        id="birthDate" 
+                        name="birth_date" 
+                        class="form-input"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Пароль -->
+                <div class="form-group">
+                    <label class="form-label" for="password">Пароль</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Минимум 3 символа"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- Кнопка регистрации -->
+                <button type="submit" class="btn btn-primary btn-full">
+                    Зарегистрироваться
+                </button>
+            </form>
+
+            <!-- Ссылка на вход -->
+            <div class="text-center mt-20">
+                <span>Уже есть аккаунт? </span>
+                <a href="login.html" class="link">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS для SPA-логики (участник должен реализовать) -->
+    <script>
+        // TODO: Реализовать валидацию формы
+        // TODO: Реализовать отправку данных на API
+        // TODO: Обработать ответ и показать сообщения
+    </script>
+</body>
+</html>

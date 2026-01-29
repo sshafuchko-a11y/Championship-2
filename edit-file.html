@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование файла - Файловое хранилище</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📁 Файловое хранилище</div>
+            <nav class="nav">
+                <a href="my-files.html" class="nav-link">Мои файлы</a>
+                <a href="shared-files.html" class="nav-link">Доступные файлы</a>
+                <a href="upload-files.html" class="nav-link">Загрузить</a>
+            </nav>
+            <button class="btn-logout" id="logoutBtn">Выход</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">Редактирование файла</h1>
+            
+            <!-- Сообщения -->
+            <div id="message" class="message"></div>
+
+            <!-- Форма редактирования -->
+            <form id="editFileForm">
+                <!-- Новое имя файла -->
+                <div class="form-group">
+                    <label class="form-label" for="fileName">Имя файла</label>
+                    <input 
+                        type="text" 
+                        id="fileName" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="document.pdf"
+                        required
+                    >
+                    <div class="form-error">Ошибка валидации</div>
+                </div>
+
+                <!-- ID файла (скрытое поле, заполняется из URL) -->
+                <input type="hidden" id="fileId" name="file_id">
+
+                <!-- Кнопки -->
+                <div class="flex gap-10">
+                    <button type="button" class="btn btn-secondary" id="backBtn">
+                        ← Назад
+                    </button>
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">
+                        💾 Сохранить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS для SPA-логики (участник должен реализовать) -->
+    <script>
+        // TODO: Получить file_id из URL параметров
+        // TODO: Загрузить текущее имя файла
+        // TODO: Обработать отправку формы (PATCH запрос)
+        // TODO: Обработать кнопку "Назад" (вернуться на my-files.html)
+        // TODO: Показать сообщение об успехе/ошибке
+    </script>
+</body>
+</html>

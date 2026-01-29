@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Права доступа - Файловое хранилище</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">📁 Файловое хранилище</div>
+            <nav class="nav">
+                <a href="my-files.html" class="nav-link">Мои файлы</a>
+                <a href="shared-files.html" class="nav-link">Доступные файлы</a>
+                <a href="upload-files.html" class="nav-link">Загрузить</a>
+            </nav>
+            <button class="btn-logout" id="logoutBtn">Выход</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card card-wide">
+            <h1 class="card-title">Управление правами доступа</h1>
+            
+            <!-- Информация о файле -->
+            <div class="mb-20">
+                <strong>Файл:</strong> <span id="fileName">document.pdf</span>
+            </div>
+
+            <!-- ID файла (скрытое поле, заполняется из URL) -->
+            <input type="hidden" id="fileId">
+
+            <!-- Сообщения -->
+            <div id="message" class="message"></div>
+
+            <!-- Форма добавления пользователя -->
+            <div class="card" style="background: #f8f9fa; box-shadow: none; padding: 20px;">
+                <h3 style="margin-bottom: 15px;">Добавить пользователя</h3>
+                <form id="addPermissionForm">
+                    <div class="form-group">
+                        <label class="form-label" for="userEmail">Email пользователя</label>
+                        <input 
+                            type="email" 
+                            id="userEmail" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="user@example.com"
+                            required
+                        >
+                        <div class="form-error">Ошибка валидации</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        ➕ Добавить доступ
+                    </button>
+                </form>
+            </div>
+
+            <!-- Список пользователей с доступом -->
+            <h3 class="mt-20 mb-10">Пользователи с доступом</h3>
+
+            <div class="user-list" id="userList">
+                <!-- Пример пользователя для демонстрации структуры -->
+                <div class="user-item">
+                    <div class="user-info">
+                        <div class="user-name">Сидорова Анна Петровна</div>
+                        <div class="user-email">anna@example.com</div>
+                        <div class="user-email" style="font-size: 12px; color: #999;">
+                            Доступ предоставлен: 14.01.2024 15:45
+                        </div>
+                    </div>
+                    <button class="btn btn-danger" data-user-id="2">
+                        🗑️ Удалить доступ
+                    </button>
+                </div>
+
+                <!-- Пример второго пользователя -->
+                <div class="user-item">
+                    <div class="user-info">
+                        <div class="user-name">Иванов Петр Сергеевич</div>
+                        <div class="user-email">petr@example.com</div>
+                        <div class="user-email" style="font-size: 12px; color: #999;">
+                            Доступ предоставлен: 13.01.2024 10:20
+                        </div>
+                    </div>
+                    <button class="btn btn-danger" data-user-id="3">
+                        🗑️ Удалить доступ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Пустой список -->
+            <div id="emptyState" class="text-center mt-20" style="display: none;">
+                <p>Доступ к файлу пока никому не предоставлен</p>
+            </div>
+
+            <!-- Кнопка назад -->
+            <div class="mt-20">
+                <button class="btn btn-secondary" id="backBtn">
+                    ← Назад к списку файлов
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS для SPA-логики (участник должен реализовать) -->
+    <script>
+        // TODO: Получить file_id из URL параметров
+        // TODO: Загрузить информацию о файле
+        // TODO: Загрузить список пользователей с доступом
+        // TODO: Обработать добавление нового пользователя (POST запрос)
+        // TODO: Обработать удаление доступа (DELETE запрос)
+        // TODO: Обработать кнопку "Назад"
+    </script>
+</body>
+</html>

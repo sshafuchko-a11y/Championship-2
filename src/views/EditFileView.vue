@@ -30,7 +30,6 @@ const loading = ref(false)
 const message = ref(null)
 
 onMounted(() => {
-  // Можно загрузить текущее имя, но в API нет GET /files/{id}, поэтому просто поле ввода
 })
 
 const handleSubmit = async () => {

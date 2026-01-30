@@ -23,7 +23,6 @@ const router = createRouter({
   routes
 })
 
-// Защита маршрутов
 router.beforeEach(async (to, from, next) => {
   const publicPages = ['/register', '/login']
   const authRequired = !publicPages.includes(to.path)

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API_BASE_URL = 'https://chemp2026.hafn.ru'
-const CLIENT_ID = 'YOUR_CLIENT_ID' // ← ЗАМЕНИТЕ НА РЕАЛЬНЫЙ!
+const CLIENT_ID = 'aleksandra-lk9h8'
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -12,7 +12,6 @@ const api = axios.create({
   }
 })
 
-// Добавляем токен к авторизованным запросам
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('auth_token')
   if (token) {
@@ -21,7 +20,6 @@ api.interceptors.request.use(config => {
   return config
 })
 
-// Обработка ошибок
 const parseError = (err) => {
   const res = err.response
   if (!res) throw err
@@ -38,7 +36,6 @@ const parseError = (err) => {
   }
 }
 
-// === Аутентификация ===
 export const registerUser = async (data) => {
   try {
     const res = await api.post('/registration', data)
@@ -65,7 +62,6 @@ export const logoutUser = async () => {
   }
 }
 
-// === Файлы ===
 export const uploadFiles = async (files) => {
   const formData = new FormData()
   files.forEach(f => formData.append('files[]', f))
@@ -106,7 +102,6 @@ export const downloadFile = async (id) => {
   return res
 }
 
-// === Права доступа ===
 export const getFilePermissions = async (id) => {
   const res = await api.get(`/files/${id}/permissions`)
   return res.data.data
